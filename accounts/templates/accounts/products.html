@@ -10,9 +10,19 @@
             </div>
             <div class="card car-body">
                 <table class="table">
-                    <th>Product</th>
-                    <th>Category</th>
-                    <th>Price</th>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                    </tr>
+
+                    {% for i in products %}
+                    <tr>
+                        <td>{{i.name}}</td>
+                        <td>{{i.category}}</td>
+                        <td>{{i.price}}</td>
+                    </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>

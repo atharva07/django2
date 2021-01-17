@@ -4,10 +4,15 @@ from django.forms import inlineformset_factory
 from .models import *
 from .forms import OrderForm
 from .filters import OrderFilter
+from django.contrib.auth.forms import UserCreationForm
 # Create your views here.
 
 def registerPage(request):
-    context = {}
+    form = UserCreationForm()
+
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+    context = {'form':form}
     return render(request, 'accounts/register.html', context)
 
 def loginPage(request):

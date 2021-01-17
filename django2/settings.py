@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # secret key should be taken from environment variables during 
 # production. it's best to keep this files safe and not 
-# publish on publuic repository
+# publish on publuic repository.
 SECRET_KEY = '*z59qplx@b1!yg(toi0-zt25(3l1$uw^j)0g@(^bbtyg9_fb^*'
 
 # SECURITY WARNING: don't run with debug turned on in production!

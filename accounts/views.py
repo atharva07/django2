@@ -14,7 +14,7 @@ def registerPage(request):
         form = CreateUserFrom(request.POST)
         if form.is_valid():
             form.save()
-            
+            return redirect('login')
     context = {'form':form}
     return render(request, 'accounts/register.html', context)
 

@@ -22,7 +22,7 @@ def registerPage(request):
             user = form.save()
             username = form.cleaned_data.get('username')
             group = Group.objects.get(name='customer')
-            users.groups.add(group)
+            user.groups.add(group)
             messages.success(request, 'account was created for ' + username)
             return redirect('login')
 

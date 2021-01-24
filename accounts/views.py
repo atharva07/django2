@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .decorators import unauthenticated_user
+from .decorators import allowed_users
 # Create your views here.
 
 @unauthenticated_user
@@ -48,6 +49,7 @@ def logoutUser(request):
     return redirect('login')
 
 @login_required(login_url='login')
+@allowed_users(allowed_roles=['admin'])
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
